@@ -1,8 +1,8 @@
-name:                haskell-http
+name:                http-haskell
 version:             0.1.0.0
 synopsis:            It involves Monad fiddling
 -- description:
-homepage:            https://github.com/evturn/haskell-http#readme
+homepage:            https://github.com/evturn/http-haskell#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Evan Turner
@@ -13,10 +13,18 @@ build-type:          Simple
 cabal-version:       >=1.10
 extra-source-files:  README.md
 
-executable haskell-http
+executable http-haskell
   hs-source-dirs:      src
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , http-haskell
+                     , firefly
+                     , text
+
+library
+  hs-source-dirs:      src
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , firefly
