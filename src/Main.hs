@@ -1,15 +1,15 @@
 {-# LANGUAGE OverloadedStrings #-}
-module Main where
 
 import Web.Firefly
 import qualified Data.Text as T
+import Data.Maybe
 
 app :: App ()
 app = do
   route "/hello" helloHandler
 
 helloHandler :: Handler T.Text
-helloHander = do
+helloHandler = do
   name <- fromMaybe "Stranger" <$> getQuery "name"
   return $ "Hello " `T.append` name
 
