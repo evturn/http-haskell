@@ -14,5 +14,4 @@ helloHander = do
   return $ "Hello " `T.append` name
 
 main :: IO ()
-main = do
-  putStrLn "hello world"
+main = run 3000 app
