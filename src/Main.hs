@@ -6,16 +6,16 @@ import           Web.Firefly
 
 app :: App ()
 app = do
-  route "/hello" helloHandler
-  route "/"      splatHandler
+  route "/hello" hello
+  route "/"      splat
 
-helloHandler :: Handler T.Text
-helloHandler = do
+hello :: Handler T.Text
+hello = do
   name <- fromMaybe "anonymous client" <$> getQuery "name"
   return $ "Hello " `T.append` name
 
-splatHandler :: Handler T.Text
-splatHandler = do
+splat :: Handler T.Text
+splat = do
   return $ "Sup " `T.append` "dog."
 
 main :: IO ()
