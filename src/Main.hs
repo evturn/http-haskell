@@ -1,8 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-import Web.Firefly
-import qualified Data.Text as T
-import Data.Maybe
+import           Data.Maybe
+import qualified Data.Text   as T
+import           Web.Firefly
 
 app :: App ()
 app = do
@@ -11,7 +11,7 @@ app = do
 
 helloHandler :: Handler T.Text
 helloHandler = do
-  name <- fromMaybe "Stranger" <$> getQuery "name"
+  name <- fromMaybe "anonymous client" <$> getQuery "name"
   return $ "Hello " `T.append` name
 
 splatHandler :: Handler T.Text

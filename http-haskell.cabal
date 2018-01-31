@@ -7,7 +7,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Evan Turner
 maintainer:          ev@evturn.com
-copyright:           Copyright: (c) 2017 Evan Turner
+copyright:           Copyright: (c) 2018 Evan Turner
 category:            Web
 build-type:          Simple
 cabal-version:       >=1.10
